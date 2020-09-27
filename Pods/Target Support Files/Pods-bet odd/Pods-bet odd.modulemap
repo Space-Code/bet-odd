@@ -1,0 +1,6 @@
+framework module Pods_bet_odd {
+  umbrella header "Pods-bet odd-umbrella.h"
+
+  export *
+  module * { export * }
+}

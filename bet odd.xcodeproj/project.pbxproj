@@ -1,0 +1,865 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		48AF920BDA06499DDAF24DF3 /* Pods_bet_odd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8EF4045B350546B29844718 /* Pods_bet_odd.framework */; };
+		5B20280F2519590500D7C7EC /* WinWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20280E2519590500D7C7EC /* WinWin.swift */; };
+		5B2028182519929F00D7C7EC /* WinState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2028172519929F00D7C7EC /* WinState.swift */; };
+		5B3DBD98251D0F1A00C2083A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DBD97251D0F1A00C2083A /* Router.swift */; };
+		5B3DBDA0251D0F6800C2083A /* ApostaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DBD9F251D0F6800C2083A /* ApostaStore.swift */; };
+		5B3DBDA8251D190000C2083A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B3DBDA7251D190000C2083A /* GoogleService-Info.plist */; };
+		5B8005C32517D3E6002365B6 /* bet_oddApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8005C22517D3E6002365B6 /* bet_oddApp.swift */; };
+		5B8005C52517D3E6002365B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8005C42517D3E6002365B6 /* ContentView.swift */; };
+		5B8005C72517D3E7002365B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B8005C62517D3E7002365B6 /* Assets.xcassets */; };
+		5B8005CA2517D3E7002365B6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B8005C92517D3E7002365B6 /* Preview Assets.xcassets */; };
+		5B8005D52517D3E7002365B6 /* bet_oddTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8005D42517D3E7002365B6 /* bet_oddTests.swift */; };
+		5B8005E02517D3E7002365B6 /* bet_oddUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8005DF2517D3E7002365B6 /* bet_oddUITests.swift */; };
+		5B8005F22517D4FB002365B6 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8005F12517D4FB002365B6 /* Login.swift */; };
+		5B8006192517F0DB002365B6 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8006182517F0DB002365B6 /* Home.swift */; };
+		5B817AD4251D59D600B1C00A /* Diversos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B817AD3251D59D600B1C00A /* Diversos.swift */; };
+		5B817AD9251D5A3C00B1C00A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B817AD8251D5A3C00B1C00A /* Config.swift */; };
+		5BCEAF55251E658F00FB6486 /* Aposta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEAF54251E658F00FB6486 /* Aposta.swift */; };
+		5BCEAF5A251E66C100FB6486 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEAF59251E66C100FB6486 /* Tag.swift */; };
+		5BCEAF62251E68D200FB6486 /* ApostaNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEAF61251E68D200FB6486 /* ApostaNetworking.swift */; };
+		5BED8E1D251BF33B009A7E04 /* BancaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED8E1C251BF33B009A7E04 /* BancaView.swift */; };
+		5BED8E23251BF865009A7E04 /* BancaNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED8E22251BF865009A7E04 /* BancaNetwork.swift */; };
+		5BED8E2C251BFAB8009A7E04 /* Banca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED8E2B251BFAB8009A7E04 /* Banca.swift */; };
+		5BED8E3E251BFC0C009A7E04 /* BancaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED8E3D251BFC0C009A7E04 /* BancaStore.swift */; };
+		5BF51E122518D96900271809 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF51E112518D96800271809 /* Dashboard.swift */; };
+		B2AC5BEC2C43A006D66E0CA3 /* Pods_bet_oddTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD73B3EB9DB0A8FE637A0950 /* Pods_bet_oddTests.framework */; };
+		D44F505E4EAC8159FE164146 /* Pods_bet_odd_bet_oddUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 132802CCB7E8C187188EB52F /* Pods_bet_odd_bet_oddUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5B8005D12517D3E7002365B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B8005B72517D3E6002365B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B8005BE2517D3E6002365B6;
+			remoteInfo = "bet odd";
+		};
+		5B8005DC2517D3E7002365B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B8005B72517D3E6002365B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B8005BE2517D3E6002365B6;
+			remoteInfo = "bet odd";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		132802CCB7E8C187188EB52F /* Pods_bet_odd_bet_oddUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bet_odd_bet_oddUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		187131F74D3FCA55838E4CA7 /* Pods-bet odd-bet oddUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bet odd-bet oddUITests.release.xcconfig"; path = "Target Support Files/Pods-bet odd-bet oddUITests/Pods-bet odd-bet oddUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1B5BD794C39DC76FC7A5D791 /* Pods-bet odd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bet odd.debug.xcconfig"; path = "Target Support Files/Pods-bet odd/Pods-bet odd.debug.xcconfig"; sourceTree = "<group>"; };
+		5B20280E2519590500D7C7EC /* WinWin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinWin.swift; sourceTree = "<group>"; };
+		5B2028172519929F00D7C7EC /* WinState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinState.swift; sourceTree = "<group>"; };
+		5B3DBD97251D0F1A00C2083A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		5B3DBD9F251D0F6800C2083A /* ApostaStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApostaStore.swift; sourceTree = "<group>"; };
+		5B3DBDA7251D190000C2083A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5B8005BF2517D3E6002365B6 /* bet odd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bet odd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B8005C22517D3E6002365B6 /* bet_oddApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bet_oddApp.swift; sourceTree = "<group>"; };
+		5B8005C42517D3E6002365B6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5B8005C62517D3E7002365B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B8005C92517D3E7002365B6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5B8005CB2517D3E7002365B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B8005D02517D3E7002365B6 /* bet oddTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bet oddTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B8005D42517D3E7002365B6 /* bet_oddTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bet_oddTests.swift; sourceTree = "<group>"; };
+		5B8005D62517D3E7002365B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B8005DB2517D3E7002365B6 /* bet oddUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bet oddUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B8005DF2517D3E7002365B6 /* bet_oddUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bet_oddUITests.swift; sourceTree = "<group>"; };
+		5B8005E12517D3E7002365B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B8005F12517D4FB002365B6 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		5B8006182517F0DB002365B6 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		5B817AD3251D59D600B1C00A /* Diversos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diversos.swift; sourceTree = "<group>"; };
+		5B817AD8251D5A3C00B1C00A /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		5BCEAF54251E658F00FB6486 /* Aposta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aposta.swift; sourceTree = "<group>"; };
+		5BCEAF59251E66C100FB6486 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		5BCEAF61251E68D200FB6486 /* ApostaNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApostaNetworking.swift; sourceTree = "<group>"; };
+		5BED8E1C251BF33B009A7E04 /* BancaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BancaView.swift; sourceTree = "<group>"; };
+		5BED8E22251BF865009A7E04 /* BancaNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BancaNetwork.swift; sourceTree = "<group>"; };
+		5BED8E2B251BFAB8009A7E04 /* Banca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banca.swift; sourceTree = "<group>"; };
+		5BED8E3D251BFC0C009A7E04 /* BancaStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BancaStore.swift; sourceTree = "<group>"; };
+		5BF51E112518D96800271809 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		64269F757073FDCC16F2A3B2 /* Pods-bet oddTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bet oddTests.debug.xcconfig"; path = "Target Support Files/Pods-bet oddTests/Pods-bet oddTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6FF10B27BD404FCAAF644655 /* Pods-bet oddTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bet oddTests.release.xcconfig"; path = "Target Support Files/Pods-bet oddTests/Pods-bet oddTests.release.xcconfig"; sourceTree = "<group>"; };
+		8891A0C2F1FDA76736F2887E /* Pods-bet odd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bet odd.release.xcconfig"; path = "Target Support Files/Pods-bet odd/Pods-bet odd.release.xcconfig"; sourceTree = "<group>"; };
+		A39C069EC24B519BB192712C /* Pods-bet odd-bet oddUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bet odd-bet oddUITests.debug.xcconfig"; path = "Target Support Files/Pods-bet odd-bet oddUITests/Pods-bet odd-bet oddUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C8EF4045B350546B29844718 /* Pods_bet_odd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bet_odd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD73B3EB9DB0A8FE637A0950 /* Pods_bet_oddTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bet_oddTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B8005BC2517D3E6002365B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48AF920BDA06499DDAF24DF3 /* Pods_bet_odd.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B8005CD2517D3E7002365B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2AC5BEC2C43A006D66E0CA3 /* Pods_bet_oddTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B8005D82517D3E7002365B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D44F505E4EAC8159FE164146 /* Pods_bet_odd_bet_oddUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0540AFF3082C179355B75AA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8EF4045B350546B29844718 /* Pods_bet_odd.framework */,
+				132802CCB7E8C187188EB52F /* Pods_bet_odd_bet_oddUITests.framework */,
+				CD73B3EB9DB0A8FE637A0950 /* Pods_bet_oddTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1EA32F525B637B4481A26997 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1B5BD794C39DC76FC7A5D791 /* Pods-bet odd.debug.xcconfig */,
+				8891A0C2F1FDA76736F2887E /* Pods-bet odd.release.xcconfig */,
+				A39C069EC24B519BB192712C /* Pods-bet odd-bet oddUITests.debug.xcconfig */,
+				187131F74D3FCA55838E4CA7 /* Pods-bet odd-bet oddUITests.release.xcconfig */,
+				64269F757073FDCC16F2A3B2 /* Pods-bet oddTests.debug.xcconfig */,
+				6FF10B27BD404FCAAF644655 /* Pods-bet oddTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5B20280A251957E700D7C7EC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				5BF51E112518D96800271809 /* Dashboard.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		5B2028162519928700D7C7EC /* State */ = {
+			isa = PBXGroup;
+			children = (
+				5B2028172519929F00D7C7EC /* WinState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		5B3DBD96251D0F0E00C2083A /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				5B3DBD97251D0F1A00C2083A /* Router.swift */,
+				5BCEAF59251E66C100FB6486 /* Tag.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		5B8005B62517D3E6002365B6 = {
+			isa = PBXGroup;
+			children = (
+				5B8005C12517D3E6002365B6 /* bet odd */,
+				5B8005D32517D3E7002365B6 /* bet oddTests */,
+				5B8005DE2517D3E7002365B6 /* bet oddUITests */,
+				5B8005C02517D3E6002365B6 /* Products */,
+				1EA32F525B637B4481A26997 /* Pods */,
+				0540AFF3082C179355B75AA8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5B8005C02517D3E6002365B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B8005BF2517D3E6002365B6 /* bet odd.app */,
+				5B8005D02517D3E7002365B6 /* bet oddTests.xctest */,
+				5B8005DB2517D3E7002365B6 /* bet oddUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B8005C12517D3E6002365B6 /* bet odd */ = {
+			isa = PBXGroup;
+			children = (
+				5B3DBD96251D0F0E00C2083A /* Enum */,
+				5BED8E3C251BFBFE009A7E04 /* Store */,
+				5BED8E2A251BFAAB009A7E04 /* Model */,
+				5BED8E21251BF835009A7E04 /* Network */,
+				5B2028162519928700D7C7EC /* State */,
+				5B20280A251957E700D7C7EC /* Router */,
+				5B8005F02517D4D2002365B6 /* pages */,
+				5B8005C42517D3E6002365B6 /* ContentView.swift */,
+				5B8005C22517D3E6002365B6 /* bet_oddApp.swift */,
+				5B8005C62517D3E7002365B6 /* Assets.xcassets */,
+				5B8005CB2517D3E7002365B6 /* Info.plist */,
+				5B3DBDA7251D190000C2083A /* GoogleService-Info.plist */,
+				5B8005C82517D3E7002365B6 /* Preview Content */,
+			);
+			path = "bet odd";
+			sourceTree = "<group>";
+		};
+		5B8005C82517D3E7002365B6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5B8005C92517D3E7002365B6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5B8005D32517D3E7002365B6 /* bet oddTests */ = {
+			isa = PBXGroup;
+			children = (
+				5B8005D42517D3E7002365B6 /* bet_oddTests.swift */,
+				5B8005D62517D3E7002365B6 /* Info.plist */,
+			);
+			path = "bet oddTests";
+			sourceTree = "<group>";
+		};
+		5B8005DE2517D3E7002365B6 /* bet oddUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5B8005DF2517D3E7002365B6 /* bet_oddUITests.swift */,
+				5B8005E12517D3E7002365B6 /* Info.plist */,
+			);
+			path = "bet oddUITests";
+			sourceTree = "<group>";
+		};
+		5B8005F02517D4D2002365B6 /* pages */ = {
+			isa = PBXGroup;
+			children = (
+				5B8005F12517D4FB002365B6 /* Login.swift */,
+				5B8006182517F0DB002365B6 /* Home.swift */,
+				5B20280E2519590500D7C7EC /* WinWin.swift */,
+				5BED8E1C251BF33B009A7E04 /* BancaView.swift */,
+				5B817AD3251D59D600B1C00A /* Diversos.swift */,
+				5B817AD8251D5A3C00B1C00A /* Config.swift */,
+			);
+			path = pages;
+			sourceTree = "<group>";
+		};
+		5BED8E21251BF835009A7E04 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5BED8E22251BF865009A7E04 /* BancaNetwork.swift */,
+				5BCEAF61251E68D200FB6486 /* ApostaNetworking.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5BED8E2A251BFAAB009A7E04 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5BED8E2B251BFAB8009A7E04 /* Banca.swift */,
+				5BCEAF54251E658F00FB6486 /* Aposta.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5BED8E3C251BFBFE009A7E04 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				5BED8E3D251BFC0C009A7E04 /* BancaStore.swift */,
+				5B3DBD9F251D0F6800C2083A /* ApostaStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5B8005BE2517D3E6002365B6 /* bet odd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B8005E42517D3E7002365B6 /* Build configuration list for PBXNativeTarget "bet odd" */;
+			buildPhases = (
+				C35E6DC0697CD5379D9AE0D5 /* [CP] Check Pods Manifest.lock */,
+				5B8005BB2517D3E6002365B6 /* Sources */,
+				5B8005BC2517D3E6002365B6 /* Frameworks */,
+				5B8005BD2517D3E6002365B6 /* Resources */,
+				0D215EEBAD8D93E772C85C51 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "bet odd";
+			productName = "bet odd";
+			productReference = 5B8005BF2517D3E6002365B6 /* bet odd.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5B8005CF2517D3E7002365B6 /* bet oddTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B8005E72517D3E7002365B6 /* Build configuration list for PBXNativeTarget "bet oddTests" */;
+			buildPhases = (
+				D0C13F86D99D2A3A441AFFBC /* [CP] Check Pods Manifest.lock */,
+				5B8005CC2517D3E7002365B6 /* Sources */,
+				5B8005CD2517D3E7002365B6 /* Frameworks */,
+				5B8005CE2517D3E7002365B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B8005D22517D3E7002365B6 /* PBXTargetDependency */,
+			);
+			name = "bet oddTests";
+			productName = "bet oddTests";
+			productReference = 5B8005D02517D3E7002365B6 /* bet oddTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5B8005DA2517D3E7002365B6 /* bet oddUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B8005EA2517D3E7002365B6 /* Build configuration list for PBXNativeTarget "bet oddUITests" */;
+			buildPhases = (
+				AFD93AD4AF52E69DF3CE010E /* [CP] Check Pods Manifest.lock */,
+				5B8005D72517D3E7002365B6 /* Sources */,
+				5B8005D82517D3E7002365B6 /* Frameworks */,
+				5B8005D92517D3E7002365B6 /* Resources */,
+				87E576FBC4A934CE61B16713 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B8005DD2517D3E7002365B6 /* PBXTargetDependency */,
+			);
+			name = "bet oddUITests";
+			productName = "bet oddUITests";
+			productReference = 5B8005DB2517D3E7002365B6 /* bet oddUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B8005B72517D3E6002365B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					5B8005BE2517D3E6002365B6 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					5B8005CF2517D3E7002365B6 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = 5B8005BE2517D3E6002365B6;
+					};
+					5B8005DA2517D3E7002365B6 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = 5B8005BE2517D3E6002365B6;
+					};
+				};
+			};
+			buildConfigurationList = 5B8005BA2517D3E6002365B6 /* Build configuration list for PBXProject "bet odd" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5B8005B62517D3E6002365B6;
+			productRefGroup = 5B8005C02517D3E6002365B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5B8005BE2517D3E6002365B6 /* bet odd */,
+				5B8005CF2517D3E7002365B6 /* bet oddTests */,
+				5B8005DA2517D3E7002365B6 /* bet oddUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B8005BD2517D3E6002365B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B8005CA2517D3E7002365B6 /* Preview Assets.xcassets in Resources */,
+				5B8005C72517D3E7002365B6 /* Assets.xcassets in Resources */,
+				5B3DBDA8251D190000C2083A /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B8005CE2517D3E7002365B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B8005D92517D3E7002365B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D215EEBAD8D93E772C85C51 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bet odd/Pods-bet odd-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bet odd/Pods-bet odd-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bet odd/Pods-bet odd-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87E576FBC4A934CE61B16713 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bet odd-bet oddUITests/Pods-bet odd-bet oddUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bet odd-bet oddUITests/Pods-bet odd-bet oddUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bet odd-bet oddUITests/Pods-bet odd-bet oddUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFD93AD4AF52E69DF3CE010E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bet odd-bet oddUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C35E6DC0697CD5379D9AE0D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bet odd-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0C13F86D99D2A3A441AFFBC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bet oddTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B8005BB2517D3E6002365B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BCEAF5A251E66C100FB6486 /* Tag.swift in Sources */,
+				5B817AD4251D59D600B1C00A /* Diversos.swift in Sources */,
+				5B8005C52517D3E6002365B6 /* ContentView.swift in Sources */,
+				5B817AD9251D5A3C00B1C00A /* Config.swift in Sources */,
+				5BED8E2C251BFAB8009A7E04 /* Banca.swift in Sources */,
+				5BED8E23251BF865009A7E04 /* BancaNetwork.swift in Sources */,
+				5B8005F22517D4FB002365B6 /* Login.swift in Sources */,
+				5BF51E122518D96900271809 /* Dashboard.swift in Sources */,
+				5BED8E1D251BF33B009A7E04 /* BancaView.swift in Sources */,
+				5BED8E3E251BFC0C009A7E04 /* BancaStore.swift in Sources */,
+				5B2028182519929F00D7C7EC /* WinState.swift in Sources */,
+				5B8006192517F0DB002365B6 /* Home.swift in Sources */,
+				5B3DBD98251D0F1A00C2083A /* Router.swift in Sources */,
+				5BCEAF62251E68D200FB6486 /* ApostaNetworking.swift in Sources */,
+				5B8005C32517D3E6002365B6 /* bet_oddApp.swift in Sources */,
+				5B3DBDA0251D0F6800C2083A /* ApostaStore.swift in Sources */,
+				5B20280F2519590500D7C7EC /* WinWin.swift in Sources */,
+				5BCEAF55251E658F00FB6486 /* Aposta.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B8005CC2517D3E7002365B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B8005D52517D3E7002365B6 /* bet_oddTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B8005D72517D3E7002365B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B8005E02517D3E7002365B6 /* bet_oddUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5B8005D22517D3E7002365B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B8005BE2517D3E6002365B6 /* bet odd */;
+			targetProxy = 5B8005D12517D3E7002365B6 /* PBXContainerItemProxy */;
+		};
+		5B8005DD2517D3E7002365B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B8005BE2517D3E6002365B6 /* bet odd */;
+			targetProxy = 5B8005DC2517D3E7002365B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5B8005E22517D3E7002365B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5B8005E32517D3E7002365B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5B8005E52517D3E7002365B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B5BD794C39DC76FC7A5D791 /* Pods-bet odd.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "bet odd/bet odd.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"bet odd/Preview Content\"";
+				DEVELOPMENT_TEAM = Z42V6W967K;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "bet odd/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "spacecode.bet-odd";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5B8005E62517D3E7002365B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8891A0C2F1FDA76736F2887E /* Pods-bet odd.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "bet odd/bet odd.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"bet odd/Preview Content\"";
+				DEVELOPMENT_TEAM = Z42V6W967K;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "bet odd/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "spacecode.bet-odd";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5B8005E82517D3E7002365B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64269F757073FDCC16F2A3B2 /* Pods-bet oddTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z42V6W967K;
+				INFOPLIST_FILE = "bet oddTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "spacecode.bet-oddTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bet odd.app/bet odd";
+			};
+			name = Debug;
+		};
+		5B8005E92517D3E7002365B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FF10B27BD404FCAAF644655 /* Pods-bet oddTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z42V6W967K;
+				INFOPLIST_FILE = "bet oddTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "spacecode.bet-oddTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bet odd.app/bet odd";
+			};
+			name = Release;
+		};
+		5B8005EB2517D3E7002365B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A39C069EC24B519BB192712C /* Pods-bet odd-bet oddUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z42V6W967K;
+				INFOPLIST_FILE = "bet oddUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "spacecode.bet-oddUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "bet odd";
+			};
+			name = Debug;
+		};
+		5B8005EC2517D3E7002365B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 187131F74D3FCA55838E4CA7 /* Pods-bet odd-bet oddUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z42V6W967K;
+				INFOPLIST_FILE = "bet oddUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "spacecode.bet-oddUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "bet odd";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5B8005BA2517D3E6002365B6 /* Build configuration list for PBXProject "bet odd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B8005E22517D3E7002365B6 /* Debug */,
+				5B8005E32517D3E7002365B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B8005E42517D3E7002365B6 /* Build configuration list for PBXNativeTarget "bet odd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B8005E52517D3E7002365B6 /* Debug */,
+				5B8005E62517D3E7002365B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B8005E72517D3E7002365B6 /* Build configuration list for PBXNativeTarget "bet oddTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B8005E82517D3E7002365B6 /* Debug */,
+				5B8005E92517D3E7002365B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B8005EA2517D3E7002365B6 /* Build configuration list for PBXNativeTarget "bet oddUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B8005EB2517D3E7002365B6 /* Debug */,
+				5B8005EC2517D3E7002365B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5B8005B72517D3E6002365B6 /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module Pods_bet_odd_bet_oddUITests {
+  umbrella header "Pods-bet odd-bet oddUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
