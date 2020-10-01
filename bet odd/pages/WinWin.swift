@@ -13,6 +13,19 @@ struct WinWin: View {
     
     @Binding var router: Router
     
+    @State var firstBet: Bool = true
+    @State var showResult: Bool = false
+    
+    func handleFirstButton() {
+        self.firstBet = false
+    }
+    func handlePressBack() {
+        self.firstBet = true
+    }
+    func handleSubmit() {
+        self.showResult.toggle()
+    }
+    
     var body: some View {
         ZStack{
             Color(#colorLiteral(red: 0, green: 0.262745098, blue: 0.262745098, alpha: 1))
@@ -80,33 +93,75 @@ struct WinWin: View {
                 ZStack {
                     
                     ScrollView(.vertical) {
-                        BetView(data: data)
-                            .padding(.top, 30)
-                        BetView(data: data)
+                        ScrollViewReader { scrollView in
+                            LazyVStack {
+                                if firstBet {
+                                    BetView(Title: "Corretora 01", odd: $data.firstOdd, OddPay: $data.firstOddPay, OddWinner: $data.firstOddWinner, OddPercent: $data.firstOddPercent)
+                                } else {
+                                    BetView(Title: "Corretora 02", odd: $data.secondOdd, OddPay: $data.secondOddPay, OddWinner: $data.secondOddWinner, OddPercent: $data.secondOddPercent)
+                                }
+                            }.offset(y: 50)
+                        }
                     }
-                    .frame(width: bounds.size.width, height: bounds.size.height - 200)
                     
                     ZStack {
                         Image("welcome")
                             .resizable()
                             .frame(height: 400)
                             .offset(y: 100)
-
+                        
                         VStack {
-                            Button(action: {}) {
-                                Text("Continuar")
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
-                                    .frame(width: 200, height: 60)
-                                    .cornerRadius(12)
-                                    .shadow(radius: 10)
+                            if firstBet {
+                                Button(action: handleFirstButton) {
+                                    Text("Continuar")
+                                        .font(.title2)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                                        .frame(width: 200, height: 60)
+                                        .cornerRadius(12)
+                                        .shadow(radius: 10)
+                                }
+                                .offset(y: 80)
+                            } else {
+                                HStack {
+                                    Button(action: handlePressBack) {
+                                        HStack(alignment: .center) {
+                                            Text("Voltar")
+                                                .font(.title2)
+                                                .fontWeight(.bold)
+                                                .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                                        }
+                                        .frame(width: 100, height: 60)
+                                        .cornerRadius(12)
+                                        .shadow(radius: 10)
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    Button(action: handleSubmit) {
+                                        HStack(alignment: .center) {
+                                            Text("Confirmar")
+                                                .font(.title2)
+                                                .fontWeight(.bold)
+                                                .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                                            Image(systemName: "dollarsign.circle.fill")
+                                                .font(.title)
+                                                .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                                        }
+                                        .frame(width: 200, height: 60)
+                                        .cornerRadius(12)
+                                        .shadow(radius: 10)
+                                    }
+                                    .sheet(isPresented: self.$showResult) {
+                                        ResumoWinWin(data: data)
+                                    }
+                                }
+                                .offset(y: 80)
                             }
-                            .offset(y: 70)
-                            .animation(.spring())
                         }
                     }
-                    .offset(y: 160)
+                    .offset(y: 200)
+                    
                 }
                 .frame(width: bounds.size.width, height: bounds.size.height + bounds.safeAreaInsets.bottom - 160, alignment: .top)
                 .background(Color(#colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)))
@@ -131,13 +186,19 @@ struct WinWin_Previews: PreviewProvider {
 
 struct BetView: View {
     
-    @ObservedObject var data: WinState
+    
+    var Title: String
+    
+    @Binding var odd: String
+    @Binding var OddPay: String?
+    @Binding var OddWinner: String?
+    @Binding var OddPercent: String?
     
     var body: some View {
         LazyVStack {
             VStack {
                 HStack {
-                    Text("Corretora 01")
+                    Text(Title)
                         .font(.system(size: 20))
                         .fontWeight(.bold)
                         .foregroundColor(.black)
@@ -157,7 +218,7 @@ struct BetView: View {
                     
                     Spacer()
                     
-                    TextField("0,00", text: $data.firstOdd)
+                    TextField("0,00", text: $odd)
                         .keyboardType(.decimalPad)
                         .font(.system(size: 20, weight: .heavy, design: .default))
                         .multilineTextAlignment(.trailing)
@@ -177,7 +238,7 @@ struct BetView: View {
                     
                     Spacer()
                     
-                    Text("R$ \(data.firstOddPay ?? "0.00")")
+                    Text("R$ \(OddPay ?? "0.00")")
                         .font(.headline)
                         .fontWeight(.bold)
                         .foregroundColor(.black)
@@ -188,10 +249,10 @@ struct BetView: View {
                 HStack {
                     Text("Retorno da ODD:")
                         .foregroundColor(.black)
-                    
+
                     Spacer()
-                    
-                    Text("R$ \(data.firstOddWinner ?? "0.00")")
+
+                    Text("R$ \(OddWinner ?? "0.00")")
                         .font(.headline)
                         .fontWeight(.bold)
                         .foregroundColor(.black)
@@ -205,7 +266,7 @@ struct BetView: View {
                     
                     Spacer()
                     
-                    Text("\(data.firstOddPercent ?? "0.00") %")
+                    Text("\(OddPercent ?? "0.00") %")
                         .font(.headline)
                         .fontWeight(.bold)
                         .foregroundColor(.black)

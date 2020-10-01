@@ -10,6 +10,7 @@
 		48AF920BDA06499DDAF24DF3 /* Pods_bet_odd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8EF4045B350546B29844718 /* Pods_bet_odd.framework */; };
 		5B20280F2519590500D7C7EC /* WinWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20280E2519590500D7C7EC /* WinWin.swift */; };
 		5B2028182519929F00D7C7EC /* WinState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2028172519929F00D7C7EC /* WinState.swift */; };
+		5B2A7F5E2522C9BB007EB958 /* ResumoWinWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A7F5D2522C9BB007EB958 /* ResumoWinWin.swift */; };
 		5B3DBD98251D0F1A00C2083A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DBD97251D0F1A00C2083A /* Router.swift */; };
 		5B3DBDA0251D0F6800C2083A /* ApostaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DBD9F251D0F6800C2083A /* ApostaStore.swift */; };
 		5B3DBDA8251D190000C2083A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B3DBDA7251D190000C2083A /* GoogleService-Info.plist */; };
@@ -58,6 +59,7 @@
 		1B5BD794C39DC76FC7A5D791 /* Pods-bet odd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bet odd.debug.xcconfig"; path = "Target Support Files/Pods-bet odd/Pods-bet odd.debug.xcconfig"; sourceTree = "<group>"; };
 		5B20280E2519590500D7C7EC /* WinWin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinWin.swift; sourceTree = "<group>"; };
 		5B2028172519929F00D7C7EC /* WinState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinState.swift; sourceTree = "<group>"; };
+		5B2A7F5D2522C9BB007EB958 /* ResumoWinWin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumoWinWin.swift; sourceTree = "<group>"; };
 		5B3DBD97251D0F1A00C2083A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		5B3DBD9F251D0F6800C2083A /* ApostaStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApostaStore.swift; sourceTree = "<group>"; };
 		5B3DBDA7251D190000C2083A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				5BED8E1C251BF33B009A7E04 /* BancaView.swift */,
 				5B817AD3251D59D600B1C00A /* Diversos.swift */,
 				5B817AD8251D5A3C00B1C00A /* Config.swift */,
+				5B2A7F5D2522C9BB007EB958 /* ResumoWinWin.swift */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 			files = (
 				5BCEAF5A251E66C100FB6486 /* Tag.swift in Sources */,
 				5B817AD4251D59D600B1C00A /* Diversos.swift in Sources */,
+				5B2A7F5E2522C9BB007EB958 /* ResumoWinWin.swift in Sources */,
 				5B8005C52517D3E6002365B6 /* ContentView.swift in Sources */,
 				5B817AD9251D5A3C00B1C00A /* Config.swift in Sources */,
 				5BED8E2C251BFAB8009A7E04 /* Banca.swift in Sources */,

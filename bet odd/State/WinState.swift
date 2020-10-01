@@ -21,9 +21,9 @@ class WinState: ObservableObject {
             let winner = (pay * odd)
             let percent = (earningDob - pay) / 100
             
-            firstOddPay = String(format: "%.1f", pay)
-            firstOddWinner = String(format: "%.1f", winner)
-            firstOddPercent = String(format: "%.1f", percent)
+            firstOddPay = String(format: "%.2f", pay)
+            firstOddWinner = String(format: "%.2f", winner)
+            firstOddPercent = String(format: "%.2f", percent)
             
         }
     }
@@ -38,9 +38,9 @@ class WinState: ObservableObject {
             let winner = (pay * odd)
             let percent = (earningDob - pay) / 100
             
-            secondOddPay = String(format: "%.1f", pay)
-            secondOddWinner = String(format: "%.1f", winner)
-            secondOddPercent = String(format: "%.1f", percent)
+            secondOddPay = String(format: "%.2f", pay)
+            secondOddWinner = String(format: "%.2f", winner)
+            secondOddPercent = String(format: "%.2f", percent)
             
         }
     }

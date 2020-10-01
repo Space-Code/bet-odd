@@ -84,7 +84,6 @@ struct Home: View {
                         }
                         Spacer()
                         ExDivider(height: 30)
-                            .foregroundColor(.white)
                         Spacer()
                         Button(action: { router = .diversos }) {
                             VStack {
