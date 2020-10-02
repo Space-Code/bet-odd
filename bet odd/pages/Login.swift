@@ -67,12 +67,14 @@ struct Login : View {
                                         UserDefaults.standard.set(email, forKey: "email")
                                         UserDefaults.standard.set(firstName, forKey: "firstName")
                                         UserDefaults.standard.set(lastName, forKey: "lastName")
+                                    } else {
+                                        
+                                        print(UserDefaults.standard.string(forKey: "userID") ?? "")
+                                        print(UserDefaults.standard.string(forKey: "email") ?? "")
+                                        print(UserDefaults.standard.string(forKey: "firstName") ?? "")
+                                        print(UserDefaults.standard.string(forKey: "lastName") ?? "")
                                     }
                                     
-//                                        print(UserDefaults.standard.string(forKey: "userID"))
-//                                        print(UserDefaults.standard.string(forKey: "email"))
-//                                        print(UserDefaults.standard.string(forKey: "firstName"))
-//                                        print(UserDefaults.standard.string(forKey: "lastName"))
                                     
                                 // default break (don't remove)
                                 default:

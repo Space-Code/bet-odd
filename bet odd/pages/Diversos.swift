@@ -18,10 +18,20 @@ struct Diversos: View {
     func submitDiversos() {
         
         let first = Double((data.firstOddPay?.replacingOccurrences(of: ",", with: "."))!) ?? 0
-                
-        let betodd: Aposta = Aposta(tag: Tag.diversos.rawValue, totalInvestido: Int(first))
         
-        aposta.setApostaWinWin(aposta: betodd) { bet in
+        let value = UserDefaults.standard.double(forKey: "bettingValue")
+
+        if value > first {
+            let betting = value - first
+            UserDefaults.standard.set(betting, forKey: "bettingValue")
+                    
+            let betodd: Aposta = Aposta(tag: Tag.diversos.rawValue, totalInvestido: Int(first))
+            
+            aposta.setApostaWinWin(aposta: betodd) { bet in
+                router = .home
+            }
+        } else {
+            print("Saldo inferior,  por favor adicione mais credito")
             router = .home
         }
     }

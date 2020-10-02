@@ -28,6 +28,9 @@ struct BancaView: View {
                 self.viewRouter.currentPage = "dashboard"
                 
                 self.banca = banca
+                
+                UserDefaults.standard.set(banca.valorBanca, forKey: "bettingValue")
+                UserDefaults.standard.set(banca.id, forKey: "bettingId")
             }
         }
         

@@ -23,9 +23,11 @@ struct Home: View {
     }
         
     func onInit() {
-        store.getBancaById() { banca in
-            self.banca = banca
-        }
+        
+        let id = UserDefaults.standard.integer(forKey: "bettingId")
+        let value = UserDefaults.standard.double(forKey: "bettingValue")
+        
+        self.banca = Banca(id: id, valorBanca: value)
         
         aposta.getApostaWinWin() { aposta in
             apostas.append(contentsOf: aposta)
@@ -46,15 +48,15 @@ struct Home: View {
                 }
                 .frame(width: bounds.size.width, height: bounds.size.height, alignment: .top)
                 
-//                VStack {
-//                    Button(action: { router = .config }) {
-//                        Image(systemName: "gear")
-//                            .font(.system(size: 40))
-//                    }
-//                    .padding(.horizontal, 20)
-//                }
-//                .frame(width: bounds.size.width, height: 50, alignment: .topTrailing)
-//                .offset(x: 0, y: 30.0)
+                VStack {
+                    Button(action: { router = .config }) {
+                        Image(systemName: "gear")
+                            .font(.system(size: 40))
+                    }
+                    .padding(.horizontal, 20)
+                }
+                .frame(width: bounds.size.width, height: 50, alignment: .topTrailing)
+                .offset(x: 0, y: 30.0)
                 
                 VStack {
                     VStack(alignment: .leading) {

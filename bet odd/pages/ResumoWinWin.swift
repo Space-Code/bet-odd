@@ -49,9 +49,19 @@ struct ResumoWinWin: View {
         
         let valorTotal = (first + second)
         
-        let betodd: Aposta = Aposta(tag: Tag.winwin.rawValue, totalInvestido: Int(valorTotal))
+        let value = UserDefaults.standard.double(forKey: "bettingValue")
         
-        aposta.setApostaWinWin(aposta: betodd ){ bet in
+        if value > valorTotal {
+            let betting = value - valorTotal
+            UserDefaults.standard.set(betting, forKey: "bettingValue")
+            
+            let betodd: Aposta = Aposta(tag: Tag.winwin.rawValue, totalInvestido: Int(valorTotal))
+            
+            aposta.setApostaWinWin(aposta: betodd ){ bet in
+                router = .home
+            }
+        } else {
+            print("Saldo inferior,  por favor adicione mais credito")
             router = .home
         }
     }
