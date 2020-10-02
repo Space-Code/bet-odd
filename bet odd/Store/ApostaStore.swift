@@ -12,9 +12,26 @@ import Combine
 
 class ApostaStore: ObservableObject {
     
+    func getApostaWinWin(completion: @escaping ([Aposta]) -> ()) {
+        ApostaNetworking.shared.getApostaWinWin() { (aposta) in
+            completion(aposta)
+        }
+    }
     
-    func setAposta(aposta: Aposta, completion: @escaping (Aposta) -> ()) {
-        ApostaNetworking.shared.setAposta(aposta) { (aposta) in
+    func getApostaDiversos(completion: @escaping ([Aposta]) -> ()) {
+        ApostaNetworking.shared.getApostaDiversos() { (aposta) in
+            completion(aposta)
+        }
+    }
+    
+    func setApostaWinWin(aposta: Aposta, completion: @escaping (Aposta) -> ()) {
+        ApostaNetworking.shared.setApostaWinWin(aposta) { (aposta) in
+            completion(aposta)
+        }
+    }
+    
+    func setApostaDiversos(aposta: Aposta, completion: @escaping (Aposta) -> ()) {
+        ApostaNetworking.shared.setApostaDiversos(aposta) { (aposta) in
             completion(aposta)
         }
     }

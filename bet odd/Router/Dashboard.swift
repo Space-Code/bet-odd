@@ -17,7 +17,7 @@ struct Dashboard: View {
         Group {
             switch router {
             case .home:
-                Home(banca: $banca, router: $router)
+                Home(router: $router)
             case .winwin:
                 WinWin(router: $router)
             case .diversos:

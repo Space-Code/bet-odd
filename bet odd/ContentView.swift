@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var isLogin: Bool = false
-    @State var isBanca: Bool = true
+    @EnvironmentObject var viewRouter: ViewRouter
     
+    @State var isLogin: Bool = false
     
     @State var banca: Banca = Banca(valorBanca: 0)
     
@@ -36,8 +36,8 @@ struct ContentView: View {
                 .padding(.vertical)
                 .edgesIgnoringSafeArea(.all)
             } else {
-                if isBanca {
-                    BancaView(isBanca: $isBanca, banca: $banca)
+                if viewRouter.currentPage == "banca" {
+                    BancaView(banca: $banca)
                         .environmentObject(BancaStore())
                 } else {
                     Dashboard(banca: $banca)

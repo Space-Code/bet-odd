@@ -51,7 +51,6 @@ struct WinWin: View {
                 .frame(width: bounds.size.width, height: 50, alignment: .topLeading)
                 .offset(x: 0, y: 20.0)
                 
-                
                 VStack {
                     Text("Win ou Win")
                         .font(.system(size: 22))
@@ -88,7 +87,6 @@ struct WinWin: View {
                 }
                 .frame(width: bounds.size.width, height: 50, alignment: .topLeading)
                 .offset(x: 0, y: 70.0)
-                
                 
                 ZStack {
                     
@@ -153,7 +151,7 @@ struct WinWin: View {
                                         .shadow(radius: 10)
                                     }
                                     .sheet(isPresented: self.$showResult) {
-                                        ResumoWinWin(data: data)
+                                        ResumoWinWin(data: data, router: $router)
                                     }
                                 }
                                 .offset(y: 80)

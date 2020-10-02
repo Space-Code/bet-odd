@@ -10,9 +10,9 @@ import Foundation
 import Combine
 
 // MARK: - Aposta
-struct Aposta: Codable, Equatable {
+struct Aposta: Codable, Equatable, Identifiable {
     
-    var id: Int
+    var id: Int?
     var tag: String
     var totalInvestido: Int
 

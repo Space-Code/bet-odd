@@ -10,8 +10,21 @@ import SwiftUI
 struct Diversos: View {
     
     @ObservedObject var data = WinState()
+    @ObservedObject var aposta = ApostaStore()
     
     @Binding var router: Router
+    
+    
+    func submitDiversos() {
+        
+        let first = Double((data.firstOddPay?.replacingOccurrences(of: ",", with: "."))!) ?? 0
+                
+        let betodd: Aposta = Aposta(tag: Tag.diversos.rawValue, totalInvestido: Int(first))
+        
+        aposta.setApostaWinWin(aposta: betodd) { bet in
+            router = .home
+        }
+    }
     
     var body: some View {
         ZStack{
@@ -165,7 +178,7 @@ struct Diversos: View {
                             .offset(y: 100)
                         
                         VStack {
-                            Button(action: {}) {
+                            Button(action: submitDiversos) {
                                 Text("Confirmar")
                                     .font(.title2)
                                     .fontWeight(.bold)

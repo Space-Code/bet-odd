@@ -17,6 +17,7 @@ struct bet_oddApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ViewRouter())
         }
     }
 }

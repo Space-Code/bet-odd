@@ -9,13 +9,28 @@ import SwiftUI
 
 struct Home: View {
     
-    @Binding var banca: Banca
+    @ObservedObject var store = BancaStore()
+    @ObservedObject var aposta = ApostaStore()
+    
     @Binding var router: Router
+    
+    @State var banca: Banca?
+    
+    @State var apostas: [Aposta] = []
     
     func valueBet(value: Double) -> String {
         return String(format: "%.2f", value)
     }
-    
+        
+    func onInit() {
+        store.getBancaById() { banca in
+            self.banca = banca
+        }
+        
+        aposta.getApostaWinWin() { aposta in
+            apostas.append(contentsOf: aposta)
+        }
+    }
     
     var body: some View {
         ZStack{
@@ -31,15 +46,15 @@ struct Home: View {
                 }
                 .frame(width: bounds.size.width, height: bounds.size.height, alignment: .top)
                 
-                VStack {
-                    Button(action: { router = .config }) {
-                        Image(systemName: "gear")
-                            .font(.system(size: 40))
-                    }
-                    .padding(.horizontal, 20)
-                }
-                .frame(width: bounds.size.width, height: 50, alignment: .topTrailing)
-                .offset(x: 0, y: 30.0)
+//                VStack {
+//                    Button(action: { router = .config }) {
+//                        Image(systemName: "gear")
+//                            .font(.system(size: 40))
+//                    }
+//                    .padding(.horizontal, 20)
+//                }
+//                .frame(width: bounds.size.width, height: 50, alignment: .topTrailing)
+//                .offset(x: 0, y: 30.0)
                 
                 VStack {
                     VStack(alignment: .leading) {
@@ -55,7 +70,7 @@ struct Home: View {
                                 Spacer()
                             }
                             VStack {
-                                Text("\(valueBet(value: banca.valorBanca))")
+                                Text("\(valueBet(value: banca?.valorBanca ?? 0))")
                                     .foregroundColor(.white)
                                     .font(.title2)
                                     .fontWeight(.bold)
@@ -103,23 +118,46 @@ struct Home: View {
                 .offset(x: 0, y: 160.0)
                 
                 VStack {
-                    Color(.white)
+                    
+                    HStack {
+                        Text("Tipo de aposta")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                        
+                        Spacer()
+                        
+                        Text("Invertimento")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                    }.padding()
+                    
+                    ScrollView {
+                        VStack {
+                            ForEach(apostas) { item in
+                                Bet(aposta: item, bounds: bounds)
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                    
                 }
+                .frame(width: bounds.size.width, height: bounds.size.height + bounds.safeAreaInsets.bottom - 250, alignment: .top)
                 .background(Color(#colorLiteral(red: 0.8980392157, green: 0.9254901961, blue: 0.9254901961, alpha: 1)))
                 .cornerRadius(12)
-                .frame(width: bounds.size.width, height: bounds.size.height + bounds.safeAreaInsets.bottom - 250, alignment: .center)
                 .offset(x: 0, y: 250.0)
-                
+                .edgesIgnoringSafeArea(.bottom)
                 
             }
         }
+        .onAppear(perform: onInit)
     }
 }
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home(banca: .constant(Banca(valorBanca: 70000)), router: .constant(.home))
-            .preferredColorScheme(.dark)
+        Home(router: .constant(.home))
     }
 }
 
@@ -132,5 +170,36 @@ struct ExDivider: View {
             .fill(color)
             .frame(width: width, height: height)
             .edgesIgnoringSafeArea(.horizontal)
+    }
+}
+
+struct Bet: View {
+    
+    var aposta: Aposta
+    
+    var bounds: GeometryProxy
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Text(aposta.tag)
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                
+                Spacer()
+                
+                Text("R$ \(aposta.totalInvestido)")
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+            }
+            .padding(.horizontal)
+            .frame(width: bounds.size.width - 20, alignment: .leading)
+            
+        }
+        .padding()
+        .frame(width: bounds.size.width - 20, alignment: .center)
+        .background(Color(.white))
+        .cornerRadius(12.0)
     }
 }

@@ -11,9 +11,10 @@ struct BancaView: View {
     
     /// Observables
     @EnvironmentObject var store: BancaStore
+    @EnvironmentObject var viewRouter: ViewRouter
+    
     @State var valorBanca: String = ""
     
-    @Binding var isBanca: Bool
     @Binding var banca: Banca
     
     
@@ -24,7 +25,7 @@ struct BancaView: View {
         
         self.store.setBanca(banca: banca) { (banca) in
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.isBanca = false
+                self.viewRouter.currentPage = "dashboard"
                 
                 self.banca = banca
             }
@@ -84,6 +85,7 @@ struct BancaView: View {
 
 struct BancaView_Previews: PreviewProvider {
     static var previews: some View {
-        BancaView(isBanca: .constant(true), banca: .constant(Banca(id: 0, valorBanca: 3000)))
+        BancaView(banca: .constant(Banca(id: 0, valorBanca: 3000)))
+            .environmentObject(ViewRouter())
     }
 }

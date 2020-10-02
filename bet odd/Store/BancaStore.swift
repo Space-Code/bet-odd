@@ -23,4 +23,10 @@ class BancaStore: ObservableObject {
         }
     }
     
+    func getBancaById(completion: @escaping (Banca) -> ()) {
+        BancaNetworking.shared.getBancaById() { (banca) in
+            completion(banca)
+        }
+    }
+    
 }

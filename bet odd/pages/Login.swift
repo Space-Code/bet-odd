@@ -45,16 +45,39 @@ struct Login : View {
                 
                 VStack {
                     SignInWithAppleButton(
-                        .continue,
+                        .signIn,
                         onRequest: { request in
                             // 1
                             request.requestedScopes = [.fullName, .email]
                         },
                         onCompletion: { result in
                             switch result {
-                            case .success ( _):
+                            case .success (let authResults):
                                 // 2
                                 print("Authorization successful.")
+                                switch authResults.credential {
+                                case let appleIDCredential as ASAuthorizationAppleIDCredential:
+                                    let userID = appleIDCredential.user
+                                    if let firstName = appleIDCredential.fullName?.givenName,
+                                        let lastName = appleIDCredential.fullName?.familyName,
+                                        let email = appleIDCredential.email{
+                                        
+                                        /// Save to local
+                                        UserDefaults.standard.set(userID, forKey: "userID")
+                                        UserDefaults.standard.set(email, forKey: "email")
+                                        UserDefaults.standard.set(firstName, forKey: "firstName")
+                                        UserDefaults.standard.set(lastName, forKey: "lastName")
+                                    }
+                                    
+//                                        print(UserDefaults.standard.string(forKey: "userID"))
+//                                        print(UserDefaults.standard.string(forKey: "email"))
+//                                        print(UserDefaults.standard.string(forKey: "firstName"))
+//                                        print(UserDefaults.standard.string(forKey: "lastName"))
+                                    
+                                // default break (don't remove)
+                                default:
+                                    break
+                                }
                                 self.isLogin = true
                             case .failure (let error):
                                 // 3

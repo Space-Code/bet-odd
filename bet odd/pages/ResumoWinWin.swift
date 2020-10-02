@@ -10,6 +10,9 @@ import SwiftUI
 struct ResumoWinWin: View {
     
     @ObservedObject var data = WinState()
+    @ObservedObject var aposta = ApostaStore()
+    
+    @Binding var router: Router
     
     func percentualFinal() -> String {
         
@@ -39,12 +42,25 @@ struct ResumoWinWin: View {
         
     }
     
+    func submitWinWin() {
+        
+        let first = Double((data.firstOddPay?.replacingOccurrences(of: ",", with: "."))!) ?? 0
+        let second = Double((data.secondOddPay?.replacingOccurrences(of: ",", with: "."))!) ?? 0
+        
+        let valorTotal = (first + second)
+        
+        let betodd: Aposta = Aposta(tag: Tag.winwin.rawValue, totalInvestido: Int(valorTotal))
+        
+        aposta.setApostaWinWin(aposta: betodd ){ bet in
+            router = .home
+        }
+    }
+    
     var body: some View {
         GeometryReader { bounds in
             
             ZStack {
                 
-                    
                 ZStack {
                     Image("pattern")
                         .frame(width: bounds.size.width, alignment: .topTrailing)
@@ -118,7 +134,6 @@ struct ResumoWinWin: View {
                     .cornerRadius(12.0)
 
                     Spacer()
-                    
                     
                     VStack {
                         HStack {
@@ -221,7 +236,7 @@ struct ResumoWinWin: View {
                     
                     Spacer()
                     
-                    Button(action: {}) {
+                    Button(action: submitWinWin) {
                         VStack {
                             Text("Confirmar")
                                 .font(.title2)
@@ -236,8 +251,7 @@ struct ResumoWinWin: View {
                     .padding(.top, 50)
                     .padding(.bottom, 20)
                 }
-                .frame(width: bounds.size.width, height: bounds.size.height - 400
-                )
+                .frame(width: bounds.size.width, height: bounds.size.height - 400)
 
             }
         }
@@ -247,8 +261,8 @@ struct ResumoWinWin: View {
 struct ResumoWinWin_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ResumoWinWin()
-            ResumoWinWin()
+            ResumoWinWin(router: .constant(.winwin))
+            ResumoWinWin(router: .constant(.winwin))
                 .preferredColorScheme(.dark)
         }
     }

@@ -12,6 +12,34 @@ class BancaNetworking {
     
     static let shared = BancaNetworking()
     
+    
+    func getBancaById(completion: @escaping (Banca) -> ()) {
+        guard let url = URL(string: "https://win-odd.herokuapp.com/banca/search/11") else { return }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            
+            /// Check for Error
+            if let error = error {
+                print("Error took place \(error)")
+                return
+            }
+            
+            guard let data = data else { return }
+            guard let _ = response else { return }
+            
+            do {
+                let banca = try JSONDecoder().decode(Banca.self, from: data)
+                DispatchQueue.main.async {
+                    completion(banca)
+                }
+            } catch {
+                print("JSON error: \(error.localizedDescription)")
+            }
+
+        }
+        .resume()
+    }
+    
     func setBanca(_ banca: Banca, completion: @escaping (Banca) -> ()) {
             let url = URL(string: "https://win-odd.herokuapp.com/banca/save")
             
