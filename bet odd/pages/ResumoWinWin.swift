@@ -14,6 +14,8 @@ struct ResumoWinWin: View {
     
     @Binding var router: Router
     
+    @State var isLoading = false
+    
     func percentualFinal() -> String {
         
         let first = Double((data.firstOddPay?.replacingOccurrences(of: ",", with: "."))!) ?? 0
@@ -44,6 +46,8 @@ struct ResumoWinWin: View {
     
     func submitWinWin() {
         
+        self.isLoading = true
+        
         let first = Double((data.firstOddPay?.replacingOccurrences(of: ",", with: "."))!) ?? 0
         let second = Double((data.secondOddPay?.replacingOccurrences(of: ",", with: "."))!) ?? 0
         
@@ -52,217 +56,235 @@ struct ResumoWinWin: View {
         let value = UserDefaults.standard.double(forKey: "bettingValue")
         
         if value > valorTotal {
-            let betting = value - valorTotal
-            UserDefaults.standard.set(betting, forKey: "bettingValue")
             
             let betodd: Aposta = Aposta(tag: Tag.winwin.rawValue, totalInvestido: Int(valorTotal))
             
             aposta.setApostaWinWin(aposta: betodd ){ bet in
-                router = .home
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    
+                    let betting = value - valorTotal
+                    UserDefaults.standard.set(betting, forKey: "bettingValue")
+                    
+                    self.isLoading = false
+                    router = .home
+                }
             }
         } else {
-            print("Saldo inferior,  por favor adicione mais credito")
-            router = .home
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                
+                self.isLoading = false
+                router = .home
+            }
         }
     }
     
     var body: some View {
-        GeometryReader { bounds in
+        ZStack {
             
-            ZStack {
+            
+            GeometryReader { bounds in
+                
                 
                 ZStack {
-                    Image("pattern")
-                        .frame(width: bounds.size.width, alignment: .topTrailing)
-                        .edgesIgnoringSafeArea(.top)
-                }
-                .frame(width: bounds.size.width, height: bounds.size.height, alignment: .top)
-                
-                VStack {
-                    Text("Resumo")
-                        .font(.title3)
-                    Text("Win Win")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                }
-                .frame(width: bounds.size.width, height: bounds.size.height, alignment: .top)
-                .offset(y: 30)
-                
-                VStack {
-                    VStack {
-                        HStack {
-                            Image(systemName: "01.square.fill")
-                                .font(.title)
-                            Text("Corretora")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                            
-                            Spacer()
-                            
-                            Text("ODD: \(data.firstOdd)")
-                                .fontWeight(.bold)
-                        }
-                        .padding(.top)
-                        .padding(.horizontal)
-                        .frame(width: bounds.size.width - 20, alignment: .leading)
-                        
-                        
-                        Divider()
-                            .padding(.horizontal)
-                        
-                        Spacer()
-                        
-                        HStack {
-                                                        
-                            VStack {
-                                Text("Apostar")
-                                Text("R$ \(data.firstOddPay ?? "0.00")")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                    .padding(.trailing, 10)
-                            }
-                            
-                            Spacer()
-                            
-                            VStack {
-                                Text("Retorno")
-                                Text("R$ \(data.firstOddWinner ?? "0.00")")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                    .padding(.trailing, 10)
-                            }
-                        }
-                        .padding()
-                        .padding(.horizontal)
-                        .frame(width: bounds.size.width - 20, alignment: .center)
-                        
-                        Spacer()
+                    
+                    ZStack {
+                        Image("pattern")
+                            .frame(width: bounds.size.width, alignment: .topTrailing)
+                            .edgesIgnoringSafeArea(.top)
                     }
-                    .padding(.horizontal)
-                    .frame(width: bounds.size.width - 20, height: 150, alignment: .center)
-                    .background(Color("Color4"))
-                    .cornerRadius(12.0)
-
-                    Spacer()
+                    .frame(width: bounds.size.width, height: bounds.size.height, alignment: .top)
                     
                     VStack {
-                        HStack {
-                            Image(systemName: "02.square.fill")
-                                .font(.title)
-                            Text("Corretora")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                            
-                            Spacer()
-                            
-                            Text("ODD: \(data.secondOdd)")
-                                .fontWeight(.bold)
-                        }
-                        .padding(.top)
-                        .padding(.horizontal)
-                        .frame(width: bounds.size.width - 20, alignment: .leading)
-                        
-                        Divider()
-                            .padding(.horizontal)
-                        
-                        Spacer()
-                        
-                        HStack {
-                            
-                            VStack {
-                                Text("Apostar")
-                                Text("R$ \(data.secondOddPay ?? "0.00")")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                    .padding(.trailing, 10)
-                            }
-                            
-                            Spacer()
-                            
-                            Spacer()
-                            
-                            VStack {
-                                Text("Retorno")
-                                Text("R$ \(data.secondOddWinner ?? "0.00")")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                    .padding(.trailing, 10)
-                            }
-                        }
-                        .padding()
-                        .padding(.horizontal)
-                        .frame(width: bounds.size.width - 20, alignment: .center)
-                        
-                        Spacer()
+                        Text("Resumo")
+                            .font(.title3)
+                        Text("Win Win")
+                            .font(.title2)
+                            .fontWeight(.bold)
                     }
-                    .padding(.horizontal)
-                    .frame(width: bounds.size.width - 20, height: 150, alignment: .center)
-                    .background(Color("Color4"))
-                    .cornerRadius(12.0)
-                    
-                    Spacer()
+                    .frame(width: bounds.size.width, height: bounds.size.height, alignment: .top)
+                    .offset(y: 30)
                     
                     VStack {
-                        HStack {
-                            Text("Percentual")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                            
-                            Spacer()
-                            
-                            Text("\(percentualFinal()) %")
-                                .fontWeight(.bold)
-                        }
-                        .padding(.horizontal)
-                        .frame(width: bounds.size.width - 20, alignment: .leading)
-                                                
-                    }
-                    .padding()
-                    .frame(width: bounds.size.width - 20, alignment: .center)
-                    .background(Color("Color4"))
-                    .cornerRadius(12.0)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        HStack {
-                            Text("Retorno final")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                            
-                            Spacer()
-                            
-                            Text("R$ \(retornoFinal()) ")
-                                .fontWeight(.bold)
-                        }
-                        .padding(.horizontal)
-                        .frame(width: bounds.size.width - 20, alignment: .leading)
-                                 
-                    }
-                    .padding()
-                    .frame(width: bounds.size.width - 20, alignment: .center)
-                    .background(Color("Color4"))
-                    .cornerRadius(12.0)
-                    
-                    Spacer()
-                    
-                    Button(action: submitWinWin) {
                         VStack {
-                            Text("Confirmar")
-                                .font(.title2)
-                                .foregroundColor(.white)
+                            HStack {
+                                Image(systemName: "01.square.fill")
+                                    .font(.title)
+                                Text("Corretora")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                
+                                Spacer()
+                                
+                                Text("ODD: \(data.firstOdd)")
+                                    .fontWeight(.bold)
+                            }
+                            .padding(.top)
+                            .padding(.horizontal)
+                            .frame(width: bounds.size.width - 20, alignment: .leading)
+                            
+                            
+                            Divider()
+                                .padding(.horizontal)
+                            
+                            Spacer()
+                            
+                            HStack {
+                                                            
+                                VStack {
+                                    Text("Apostar")
+                                    Text("R$ \(data.firstOddPay ?? "0.00")")
+                                        .font(.headline)
+                                        .fontWeight(.bold)
+                                        .padding(.trailing, 10)
+                                }
+                                
+                                Spacer()
+                                
+                                VStack {
+                                    Text("Retorno")
+                                    Text("R$ \(data.firstOddWinner ?? "0.00")")
+                                        .font(.headline)
+                                        .fontWeight(.bold)
+                                        .padding(.trailing, 10)
+                                }
+                            }
+                            .padding()
+                            .padding(.horizontal)
+                            .frame(width: bounds.size.width - 20, alignment: .center)
+                            
+                            Spacer()
                         }
-                        .frame(width: bounds.size.width - 20, height: 60, alignment: .center)
-                        .background(
-                            LinearGradient(gradient: .init(colors: [Color(#colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)),Color(#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                        )
-                        .cornerRadius(12)
-                    }
-                    .padding(.top, 50)
-                    .padding(.bottom, 20)
-                }
-                .frame(width: bounds.size.width, height: bounds.size.height - 400)
+                        .padding(.horizontal)
+                        .frame(width: bounds.size.width - 20, height: 150, alignment: .center)
+                        .background(Color("Color4"))
+                        .cornerRadius(12.0)
 
+                        Spacer()
+                        
+                        VStack {
+                            HStack {
+                                Image(systemName: "02.square.fill")
+                                    .font(.title)
+                                Text("Corretora")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                
+                                Spacer()
+                                
+                                Text("ODD: \(data.secondOdd)")
+                                    .fontWeight(.bold)
+                            }
+                            .padding(.top)
+                            .padding(.horizontal)
+                            .frame(width: bounds.size.width - 20, alignment: .leading)
+                            
+                            Divider()
+                                .padding(.horizontal)
+                            
+                            Spacer()
+                            
+                            HStack {
+                                
+                                VStack {
+                                    Text("Apostar")
+                                    Text("R$ \(data.secondOddPay ?? "0.00")")
+                                        .font(.headline)
+                                        .fontWeight(.bold)
+                                        .padding(.trailing, 10)
+                                }
+                                
+                                Spacer()
+                                
+                                Spacer()
+                                
+                                VStack {
+                                    Text("Retorno")
+                                    Text("R$ \(data.secondOddWinner ?? "0.00")")
+                                        .font(.headline)
+                                        .fontWeight(.bold)
+                                        .padding(.trailing, 10)
+                                }
+                            }
+                            .padding()
+                            .padding(.horizontal)
+                            .frame(width: bounds.size.width - 20, alignment: .center)
+                            
+                            Spacer()
+                        }
+                        .padding(.horizontal)
+                        .frame(width: bounds.size.width - 20, height: 150, alignment: .center)
+                        .background(Color("Color4"))
+                        .cornerRadius(12.0)
+                        
+                        Spacer()
+                        
+                        VStack {
+                            HStack {
+                                Text("Percentual")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                
+                                Spacer()
+                                
+                                Text("\(percentualFinal()) %")
+                                    .fontWeight(.bold)
+                            }
+                            .padding(.horizontal)
+                            .frame(width: bounds.size.width - 20, alignment: .leading)
+                                                    
+                        }
+                        .padding()
+                        .frame(width: bounds.size.width - 20, alignment: .center)
+                        .background(Color("Color4"))
+                        .cornerRadius(12.0)
+                        
+                        Spacer()
+                        
+                        VStack {
+                            HStack {
+                                Text("Retorno final")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                
+                                Spacer()
+                                
+                                Text("R$ \(retornoFinal()) ")
+                                    .fontWeight(.bold)
+                            }
+                            .padding(.horizontal)
+                            .frame(width: bounds.size.width - 20, alignment: .leading)
+                                     
+                        }
+                        .padding()
+                        .frame(width: bounds.size.width - 20, alignment: .center)
+                        .background(Color("Color4"))
+                        .cornerRadius(12.0)
+                        
+                        Spacer()
+                        
+                        Button(action: submitWinWin) {
+                            VStack {
+                                Text("Confirmar")
+                                    .font(.title2)
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: bounds.size.width - 20, height: 60, alignment: .center)
+                            .background(
+                                LinearGradient(gradient: .init(colors: [Color(#colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)),Color(#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                            )
+                            .cornerRadius(12)
+                        }
+                        .padding(.top, 50)
+                        .padding(.bottom, 20)
+                    }
+                    .frame(width: bounds.size.width, height: bounds.size.height - 400)
+
+                }
+            }
+            
+            if isLoading {
+                LoadingView()
             }
         }
     }

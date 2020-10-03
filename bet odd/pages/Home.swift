@@ -104,7 +104,7 @@ struct Home: View {
                         Spacer()
                         Button(action: { router = .diversos }) {
                             VStack {
-                                Image(systemName: "dollarsign.square.fill")
+                                Image(systemName: "chart.pie.fill")
                                     .font(.system(size: 35))
                                     .foregroundColor(.white)
                                 Spacer()

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,17 @@
 		5B20280F2519590500D7C7EC /* WinWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B20280E2519590500D7C7EC /* WinWin.swift */; };
 		5B2028182519929F00D7C7EC /* WinState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2028172519929F00D7C7EC /* WinState.swift */; };
 		5B2A7F5E2522C9BB007EB958 /* ResumoWinWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A7F5D2522C9BB007EB958 /* ResumoWinWin.swift */; };
+		5B3014322527D11800E71F43 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30142B2527D11800E71F43 /* loading.json */; };
+		5B3014332527D11800E71F43 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30142C2527D11800E71F43 /* success.json */; };
+		5B3014342527D11800E71F43 /* working-room.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30142D2527D11800E71F43 /* working-room.json */; };
+		5B3014352527D11800E71F43 /* loading-awesome.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30142E2527D11800E71F43 /* loading-awesome.json */; };
+		5B3014362527D11800E71F43 /* developer.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30142F2527D11800E71F43 /* developer.json */; };
+		5B3014372527D11800E71F43 /* loading-cloud.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B3014302527D11800E71F43 /* loading-cloud.json */; };
+		5B3014382527D11800E71F43 /* group-working.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B3014312527D11800E71F43 /* group-working.json */; };
+		5B3014402527D1D900E71F43 /* BlurRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30143D2527D1D900E71F43 /* BlurRepresentable.swift */; };
+		5B3014422527D1D900E71F43 /* LottieRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B30143F2527D1D900E71F43 /* LottieRepresentable.swift */; };
+		5B30144B2527D24600E71F43 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5B30144A2527D24600E71F43 /* Lottie */; };
+		5B3014532527D89A00E71F43 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3014522527D89A00E71F43 /* LoadingView.swift */; };
 		5B3DBD98251D0F1A00C2083A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DBD97251D0F1A00C2083A /* Router.swift */; };
 		5B3DBDA0251D0F6800C2083A /* ApostaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DBD9F251D0F6800C2083A /* ApostaStore.swift */; };
 		5B3DBDA8251D190000C2083A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B3DBDA7251D190000C2083A /* GoogleService-Info.plist */; };
@@ -62,6 +73,16 @@
 		5B20280E2519590500D7C7EC /* WinWin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinWin.swift; sourceTree = "<group>"; };
 		5B2028172519929F00D7C7EC /* WinState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinState.swift; sourceTree = "<group>"; };
 		5B2A7F5D2522C9BB007EB958 /* ResumoWinWin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumoWinWin.swift; sourceTree = "<group>"; };
+		5B30142B2527D11800E71F43 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		5B30142C2527D11800E71F43 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
+		5B30142D2527D11800E71F43 /* working-room.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "working-room.json"; sourceTree = "<group>"; };
+		5B30142E2527D11800E71F43 /* loading-awesome.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-awesome.json"; sourceTree = "<group>"; };
+		5B30142F2527D11800E71F43 /* developer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = developer.json; sourceTree = "<group>"; };
+		5B3014302527D11800E71F43 /* loading-cloud.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-cloud.json"; sourceTree = "<group>"; };
+		5B3014312527D11800E71F43 /* group-working.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "group-working.json"; sourceTree = "<group>"; };
+		5B30143D2527D1D900E71F43 /* BlurRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurRepresentable.swift; sourceTree = "<group>"; };
+		5B30143F2527D1D900E71F43 /* LottieRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieRepresentable.swift; sourceTree = "<group>"; };
+		5B3014522527D89A00E71F43 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		5B3DBD97251D0F1A00C2083A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		5B3DBD9F251D0F6800C2083A /* ApostaStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApostaStore.swift; sourceTree = "<group>"; };
 		5B3DBDA7251D190000C2083A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -103,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48AF920BDA06499DDAF24DF3 /* Pods_bet_odd.framework in Frameworks */,
+				5B30144B2527D24600E71F43 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +187,37 @@
 			path = State;
 			sourceTree = "<group>";
 		};
+		5B30142A2527D10800E71F43 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				5B30142F2527D11800E71F43 /* developer.json */,
+				5B3014312527D11800E71F43 /* group-working.json */,
+				5B30142E2527D11800E71F43 /* loading-awesome.json */,
+				5B3014302527D11800E71F43 /* loading-cloud.json */,
+				5B30142B2527D11800E71F43 /* loading.json */,
+				5B30142C2527D11800E71F43 /* success.json */,
+				5B30142D2527D11800E71F43 /* working-room.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		5B30143C2527D18C00E71F43 /* Representable */ = {
+			isa = PBXGroup;
+			children = (
+				5B30143D2527D1D900E71F43 /* BlurRepresentable.swift */,
+				5B30143F2527D1D900E71F43 /* LottieRepresentable.swift */,
+			);
+			path = Representable;
+			sourceTree = "<group>";
+		};
+		5B3014572527D8AD00E71F43 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				5B3014522527D89A00E71F43 /* LoadingView.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		5B3DBD96251D0F0E00C2083A /* Enum */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +252,9 @@
 		5B8005C12517D3E6002365B6 /* bet odd */ = {
 			isa = PBXGroup;
 			children = (
+				5B3014572527D8AD00E71F43 /* Animations */,
+				5B30143C2527D18C00E71F43 /* Representable */,
+				5B30142A2527D10800E71F43 /* Lottie */,
 				5B3DBD96251D0F0E00C2083A /* Enum */,
 				5BED8E3C251BFBFE009A7E04 /* Store */,
 				5BED8E2A251BFAAB009A7E04 /* Model */,
@@ -301,6 +357,9 @@
 			dependencies = (
 			);
 			name = "bet odd";
+			packageProductDependencies = (
+				5B30144A2527D24600E71F43 /* Lottie */,
+			);
 			productName = "bet odd";
 			productReference = 5B8005BF2517D3E6002365B6 /* bet odd.app */;
 			productType = "com.apple.product-type.application";
@@ -375,6 +434,9 @@
 				Base,
 			);
 			mainGroup = 5B8005B62517D3E6002365B6;
+			packageReferences = (
+				5B3014492527D24600E71F43 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 5B8005C02517D3E6002365B6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -391,8 +453,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B3014332527D11800E71F43 /* success.json in Resources */,
 				5B8005CA2517D3E7002365B6 /* Preview Assets.xcassets in Resources */,
+				5B3014342527D11800E71F43 /* working-room.json in Resources */,
+				5B3014382527D11800E71F43 /* group-working.json in Resources */,
 				5B8005C72517D3E7002365B6 /* Assets.xcassets in Resources */,
+				5B3014362527D11800E71F43 /* developer.json in Resources */,
+				5B3014322527D11800E71F43 /* loading.json in Resources */,
+				5B3014352527D11800E71F43 /* loading-awesome.json in Resources */,
+				5B3014372527D11800E71F43 /* loading-cloud.json in Resources */,
 				5B3DBDA8251D190000C2083A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,9 +607,12 @@
 				5BCEAF62251E68D200FB6486 /* ApostaNetworking.swift in Sources */,
 				5B1730172526C08A00E6E498 /* ViewRouter.swift in Sources */,
 				5B8005C32517D3E6002365B6 /* bet_oddApp.swift in Sources */,
+				5B3014422527D1D900E71F43 /* LottieRepresentable.swift in Sources */,
 				5B3DBDA0251D0F6800C2083A /* ApostaStore.swift in Sources */,
+				5B3014402527D1D900E71F43 /* BlurRepresentable.swift in Sources */,
 				5B20280F2519590500D7C7EC /* WinWin.swift in Sources */,
 				5BCEAF55251E658F00FB6486 /* Aposta.swift in Sources */,
+				5B3014532527D89A00E71F43 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,6 +940,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5B3014492527D24600E71F43 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5B30144A2527D24600E71F43 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B3014492527D24600E71F43 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5B8005B72517D3E6002365B6 /* Project object */;
 }

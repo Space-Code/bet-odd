@@ -9,8 +9,6 @@ import SwiftUI
 import AuthenticationServices
 
 
-var social = ["twitter","fb","google"]
-
 struct Login : View {
     
     
@@ -35,13 +33,89 @@ struct Login : View {
                 .frame(width: bounds.size.width, height: bounds.size.height, alignment: .top)
                 
                 VStack {
-                    Text("Win Odd")
+                    Text("Bet Odd")
                         .foregroundColor(.white)
                         .font(.title)
                         .fontWeight(.bold)
                         .offset(x: 0, y: 50.0)
                 }
                 .frame(width: bounds.size.width, height: bounds.size.height, alignment: .top)
+                
+                ZStack {
+                    
+                    VStack {
+                        HStack {
+                            Spacer()
+                            
+                            Image(systemName: "chart.bar.fill")
+                                .font(.system(size: 30))
+                                .foregroundColor(.black)
+                                .opacity(0.8)
+                            Text("Win ou Win")
+                                .foregroundColor(.black)
+                                .opacity(0.8)
+                            
+                            Spacer()
+                            
+                            Image(systemName: "chart.pie.fill")
+                                .font(.system(size: 35))
+                                .foregroundColor(.black)
+                                .opacity(0.8)
+                            Text("Diversos")
+                                .foregroundColor(.black)
+                                .opacity(0.8)
+                            
+                            Spacer()
+                        }
+                    }
+                    .padding()
+                    .frame(width: bounds.size.width - 40, height: 100,  alignment: .center)
+                    .background(Color(#colorLiteral(red: 0.4666666667, green: 0.9019607843, blue: 0.7137254902, alpha: 1)))
+                    .cornerRadius(12.0)
+                    .offset(x: 0, y: -180.0)
+                    
+                    VStack {
+                        GeometryReader { card in
+                            VStack {
+                                Text("Trader esportivo")
+                                    .foregroundColor(.black)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                            }
+                            .padding()
+                            .frame(width: card.size.width, height: card.size.height,  alignment: .top)
+                            
+                            VStack {
+                                Text("Trader esportivo, em poucas palavras, é quem investe na bolsa esportiva. Esse tipo de investidor pode realizar operações a favor de um acontecimento em uma partida esportiva (chamada de 'Back').")
+                                    .foregroundColor(.gray)
+                            }
+                            .padding()
+                            .frame(width: card.size.width, height: card.size.height,  alignment: .center)
+                        }
+                            
+                    }
+                    .padding()
+                    .frame(width: bounds.size.width - 40, height: 300)
+                    .background(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                    .cornerRadius(12.0)
+                    .offset(x: 0, y: 40.0)
+                }
+                .frame(width: bounds.size.width, height: bounds.size.height, alignment: .center)
+                
+                
+                ZStack {
+                    Image("img footer")
+                        .resizable()
+                        .frame(height: 200, alignment: .center)
+                }
+                .frame(width: bounds.size.width, height: bounds.size.height + bounds.safeAreaInsets.bottom, alignment: .bottom)
+                
+                ZStack {
+                    Image("person")
+                        .offset(x: 80.0, y: -120.0)
+                }
+                .frame(width: bounds.size.width, height: bounds.size.height + bounds.safeAreaInsets.bottom, alignment: .bottom)
+                
                 
                 VStack {
                     SignInWithAppleButton(
@@ -89,21 +163,8 @@ struct Login : View {
                     )
                     .frame(width: 300, height: 60)
                 }
-                .frame(width: bounds.size.width, height: bounds.size.height, alignment: .center)
-                .offset(x: 0, y: 20.0)
-                
-                ZStack {
-                    Image("img footer")
-                        .resizable()
-                        .frame(height: 200, alignment: .center)
-                }
-                .frame(width: bounds.size.width, height: bounds.size.height + bounds.safeAreaInsets.bottom, alignment: .bottom)
-                
-                ZStack {
-                    Image("person")
-                        .offset(x: 80.0, y: -120.0)
-                }
-                .frame(width: bounds.size.width, height: bounds.size.height + bounds.safeAreaInsets.bottom, alignment: .bottom)
+                .frame(width: bounds.size.width, height: bounds.size.height, alignment: .bottom)
+                .offset(x: 0, y: -25.0)
             }
         }
     }
